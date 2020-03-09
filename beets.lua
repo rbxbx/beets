@@ -6,6 +6,9 @@
 -- 
 -- K2 : Quantized mute toggle
 -- K3 : Instant mute while held 
+
+engine.name = "Decimator"
+
 local BeatClock = require 'beatclock'
 local Beets = include('lib/libbeets')
 

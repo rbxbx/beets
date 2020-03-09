@@ -359,6 +359,14 @@ function Beets:add_params()
   }
 
   params:add_separator()
+    -- sample rate
+  params:add_control("sample_rate", "sample rate", controlspec.new(0, 48000, "lin", 10, 48000, ''))
+  params:set_action("sample_rate", function(x) engine.srate(x) end)
+  -- bit depth
+  params:add_control("bit_depth", "bit depth", controlspec.new(4, 31, "lin", 0, 31, ''))
+  params:set_action("bit_depth", function(x) engine.sdepth(x) end)
+
+  params:add_separator()
 
   params:add{
     type = 'control',
